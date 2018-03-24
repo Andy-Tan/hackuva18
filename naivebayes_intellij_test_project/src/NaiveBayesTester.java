@@ -115,17 +115,23 @@ public class NaiveBayesTester {
 		String[] splited = message.replaceAll("\\p{P}", "").toLowerCase().split("\\s+"); // makes everything lowercase
 		List<String> toProcess = new ArrayList<>(Arrays.asList(splited)); // dump array into list
 
-        List<String> stemmedWords = new ArrayList<>();
+        List<String> stemmedWords = new ArrayList<>(); // perform stemming first
 		for (String currWord : toProcess) {
-			if (stems.containsKey(currWord)) { // perform stemming first
+			if (stems.containsKey(currWord)) {
 				stemmedWords.add(stems.get(currWord));
 			}
+			else {
+			    stemmedWords.add(currWord);
+            }
 		}
-		stemmedWords.removeAll(stopwords); // remove stopwords
 
-        for(String word : stemmedWords) {
-            System.out.println(word);
+        // remove punctuation from stopwords provided
+        List<String> stopwordsNoPunctuation = new ArrayList<>();
+		for(String currWord : stopwords) {
+		    stopwordsNoPunctuation.add(currWord.replaceAll("\\p{P}", ""));
         }
+
+		stemmedWords.removeAll(stopwordsNoPunctuation); // remove stopwords
 
 		Set<String> noDuplicates = new TreeSet<>(stemmedWords); // removes duplicates
 
@@ -155,13 +161,8 @@ public class NaiveBayesTester {
         String testInput3 = "House across the street on fire. Granny stuck inside. Lots of smoke. Severe burns.";
         String testStemming = "shouldn't don't can't won't can't y'all 'cuz";
 
-        System.out.println(isInDanger(testStemming, probabilitiesPolice, stems, stopwords, 100000));
-        System.out.println();
-
+        System.out.println(isInDanger(testInput3, probabilitiesPolice, stems, stopwords, 100000));
         System.out.println(isInDanger(testInput3, probabilitiesFire, stems, stopwords, 100000));
-        System.out.println();
-
         System.out.println(isInDanger(testInput3, probabilitiesMedical, stems, stopwords, 100000));
-        System.out.println();
 	}
 }
