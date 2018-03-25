@@ -276,17 +276,17 @@ $(function(){
     })
   })
 
-  /*
-  $('input#button123').on('click', function(e) {
+  
+  $('button#button123').on('click', function(e) {
     e.preventDefault()
     
-    var textField = $('input#text123').val()
+    //var textField = $('').val()
     console.log("The button was clicked.")
-    console.log(textField)
-    var police = isInDanger( textField, 1)
-    var fire = isInDanger( textField, 2)
-    var medical = isInDanger( textField, 3)
+    //console.log(textField)
+    //var police = isInDanger( textField, 1)
+    //var fire = isInDanger( textField, 2)
+    //var medical = isInDanger( textField, 3)
 	
-  })*/
+  })
   
 })
