@@ -9,12 +9,13 @@ $(function(){
 		
 		var stems = ({})
 		$.getJSON( "stems.json", function(data){
-	  	stems = JSON.parse(data)
+			stems = JSON.parse(data)
 		})
 		
 		var stopwords = []
 		$.getJSON( "stopwords.json", function(data){
-	  	stopwords = JSON.parse(data)
+			console.log(data)
+			stopwords = JSON.parse(data)
 		})
 		
 		var dictionary = ({})
