@@ -43,8 +43,8 @@ $(function(){
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
         var currWord = toProcess[index5512]
         {
-            if (currWord in stems) {
-                
+            if (currWord in Object.keys(stems)) {
+              stemmedWords.push(stems[currWord])  
             } else {
               stemmedWords.push(currWord)
             }
