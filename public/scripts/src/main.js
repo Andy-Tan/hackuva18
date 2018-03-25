@@ -4,7 +4,7 @@ import 'materialize-css'
 
 $(function(){
   
-  var isInDanger = (function (message) {
+  var isInDanger = (function (message, filename) {
 		var threshold = 50
 		
 		var stems = ({})
@@ -24,7 +24,7 @@ $(function(){
 		})
 		
 		var dictionary = ({})
-		$.getJSON( 'police.json', function(json){
+		$.getJSON( filename, function(json){
 			for (var key in json) {
 				(dictionary[key] = json[key]);
 			}
@@ -287,7 +287,7 @@ $(function(){
     var textField = "car accident on I-95 gasoline fire backup needed"
     console.log("The button was clicked.")
     //console.log(textField)
-    var police = isInDanger( textField)
+    var police = isInDanger( textField, 'police.json')
 	console.log(police)
     
 	
