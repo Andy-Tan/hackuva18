@@ -279,7 +279,8 @@ $(function(){
   $('.input[type="submit"]').on('click', function(e) {
     e.preventDefault()
 	
-	var textField = $('input[type="text"]').attr("value")
+  var textField = $('input[type="text"]').attr("value")
+    console.log("The button was clicked.")
     var police = isInDanger( textField, 1)
     var fire = isInDanger( textField, 2)
     var medical = isInDanger( textField, 3)
