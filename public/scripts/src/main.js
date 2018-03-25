@@ -10,20 +10,20 @@ $(function(){
 		var stems = {}
 		$.getJSON( 'stems.json', function(data){
 			for (var key in data) {
-				stems[key.trim()] = json[key].toString()
+				stems[key.trim()] = data[key].toString()
 			}
     })
     console.log(stems)
 		var stopwords = []
 		$.getJSON( 'stopwords.json', function(data){
 			for(var key in data) {
-        stopwords.pop(json[key].toString())
+        stopwords.pop(data[key].toString())
       }
 		})
 		var dictionary = {}
 		$.getJSON( filename, function(data){
 			for (var key in data) {
-				dictionary[key.toString()] = json[key].toString()
+				dictionary[key.toString()] = data[key].toString()
 			}
     })
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
