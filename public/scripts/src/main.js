@@ -77,7 +77,7 @@ $(function(){
     for (var index5514 = 0; index5514 < noDuplicates.length; index5514++) {
         var currWord = noDuplicates[index5514]
         {
-            if (dictionary.hasOwnProperty(currWord)) {
+            if (currWord in dictionary) {
                 totalProbability *= (function (m, k) { return m[k] ? m[k] : null; })(dictionary, currWord)
             }
         }
