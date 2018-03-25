@@ -7,31 +7,40 @@ $(function(){
   var isInDanger = (function (message, dictionaryNumber) {
 		var threshold = 50
 		
-		var stems = null
-		$.getJSON( "stems.json", function(data){
-			stems = data
+		var stems = ({})
+		$.getJSON( 'stems.json', function(json){
+			for (var key in json) {
+				(stems[key] = json[key]);
+			}
 		})
 		
-		var stopwords = null
-		$.getJSON( "stopwords.json", function(data){
-			console.log(data)
-			stopwords = data
+		var stopwords = []
+		$.getJSON( 'stopwords.json', function(json){
+			for (var key in json) {
+				(stopwords.push(key));
+			}
 		})
 		
-		var dictionary = null
+		var dictionary = ({})
 		if(dictionaryNumber == 1) {
-			$.getJSON( "police.json", function(data){
-			policeDictionary = data
+			$.getJSON( 'police.json', function(json){
+				for (var key in json) {
+					(dictionary[key] = json[key]);
+				}
 			})
 		}
 		else if(dictionaryNumber == 2) {
-			$.getJSON( "fire.json", function(data){
-			fireDictionary = data
+			$.getJSON( 'fire.json', function(json){
+				for (var key in json) {
+					(dictionary[key] = json[key]);
+				}
 			})
 		}
 		else if(dictionaryNumber == 3) {
-			$.getJSON( "medical.json", function(data){
-			medicalDictionary = data
+			$.getJSON( 'medical.json', function(json){
+				for (var key in json) {
+					(dictionary[key] = json[key]);
+				}
 			})
 		}
 		
