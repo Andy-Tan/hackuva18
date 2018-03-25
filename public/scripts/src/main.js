@@ -4,7 +4,7 @@ import 'materialize-css'
 
 $(function(){
   
-  var isInDanger = (function (message, dictionaryNumber) {
+  var isInDanger = (function (message) {
 		var threshold = 50
 		
 		var stems = ({})
@@ -24,27 +24,11 @@ $(function(){
 		})
 		
 		var dictionary = ({})
-		if(dictionaryNumber == 1) {
-			$.getJSON( 'police.json', function(json){
-				for (var key in json) {
-					(dictionary[key] = json[key]);
-				}
-			})
-		}
-		else if(dictionaryNumber == 2) {
-			$.getJSON( 'fire.json', function(json){
-				for (var key in json) {
-					(dictionary[key] = json[key]);
-				}
-			})
-		}
-		else if(dictionaryNumber == 3) {
-			$.getJSON( 'medical.json', function(json){
-				for (var key in json) {
-					(dictionary[key] = json[key]);
-				}
-			})
-		}
+		$.getJSON( 'police.json', function(json){
+			for (var key in json) {
+				(dictionary[key] = json[key]);
+			}
+		})
 		
 		console.log(dictionary)
 		
@@ -303,12 +287,8 @@ $(function(){
     var textField = "car accident on I-95 gasoline fire backup needed"
     console.log("The button was clicked.")
     //console.log(textField)
-    var police = isInDanger( textField, 1)
-    var fire = isInDanger( textField, 2)
-    var medical = isInDanger( textField, 3)
-    console.log(police)
-    console.log(fire)
-    console.log(medical)
+    var police = isInDanger( textField)
+	console.log(police)
     
 	
   })
