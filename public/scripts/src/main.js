@@ -18,8 +18,8 @@ $(function(){
 		
 		var stopwords = []
 		$.getJSON( 'stopwords.json', function(json){
-			for(var index3232 = 0; index3232 < json.length; index3232++) {
-        stopwords[index3232] = json[index3232]
+			for(var key in json) {
+        stopwords[key] = json[key]
       }
 		})
 		
@@ -43,11 +43,10 @@ $(function(){
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
         var currWord = toProcess[index5512]
         {
-            if (stems.hasOwnProperty(currWord)) {
-                /* add */ (stemmedWords.push(/* get */ (function (m, k) { return m[k] ? m[k] : null; })(stems, currWord)) > 0);
-            }
-            else {
-                /* add */ (stemmedWords.push(currWord) > 0)
+            if (currWord in stems) {
+                
+            } else {
+              stemmedWords.push(currWord)
             }
         }
     }
