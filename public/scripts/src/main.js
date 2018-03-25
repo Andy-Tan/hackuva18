@@ -7,35 +7,32 @@ $(function(){
   var isInDanger = (function (message, dictionaryNumber) {
 		var threshold = 50
 		
-		var stems = []
+		var stems = ({})
 		$.getJSON( "stems.json", function( data){
-	  	stems = data
+	  	stems = JSON.parse(data)
 		})
 		
 		var stopwords = []
 		$.getJSON( "stopwords.json", function( data){
-	  	stopwords = data
+	  	stopwords = JSON.parse(data)
 		})
 		
-		var dictionary = []
+		var dictionary = ({})
 		if(dictionaryNumber == 1) {
 			$.getJSON( "police.json", function( data){
-			policeDictionary = data
+			policeDictionary = JSON.parse(data)
 			})
 		}
 		else if(dictionaryNumber == 2) {
 			$.getJSON( "fire.json", function( data){
-			fireDictionary = data
+			fireDictionary = JSON.parse(data)
 			})
 		}
 		else if(dictionaryNumber == 3) {
 			$.getJSON( "medical.json", function( data){
-			medicalDictionary = data
+			medicalDictionary = JSON.parse(data)
 			})
 		}
-		
-		console.log(stems[0])
-		console.log(stopwords[0])
 		
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
     var toProcess = (splited.slice(0).slice(0))
