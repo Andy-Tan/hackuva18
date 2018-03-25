@@ -13,6 +13,23 @@ $(function(){
   const log = console.log
   const logErr = console.error
   const logWarn = console.warn
+
+  const stems = function(){$.getJSON("stems.json", function( data ) {
+    return data;
+  })};
+  const stopwords = function(){$.getJSON("stopwords.json", function( data ) {
+    return data;
+  })};
+  const police = function(){$.getJSON("police.json", function( data ) {
+    return data;
+  })};
+  const fire = function(){$.getJSON("fire.json", function( data ) {
+    return data;
+  })};
+  const medical = function(){$.getJSON("medical.json", function( data ) {
+    return data;
+  })};
+
   let state = new Map
   const setState = (key, val, verbose = false) => {
     ls.setItem(key, val)
