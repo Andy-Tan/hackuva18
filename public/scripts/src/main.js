@@ -13,7 +13,8 @@ $(function(){
   const log = console.log
   const logErr = console.error
   const logWarn = console.warn
-
+  
+  // Read dictionaries from local
   const stems = function(){$.getJSON("stems.json", function( data ) {
     return data;
   })};
@@ -210,4 +211,12 @@ $(function(){
     })
   })
 
+  $('input[name="input"]').on('click', function(e) {
+    e.preventDefault()
+    var police = //<run thing for police>
+    var fire =
+    var medical =
+    
+
+  }
 })
