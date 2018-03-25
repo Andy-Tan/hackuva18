@@ -14,6 +14,8 @@ $(function(){
 			}
 		})
 		
+		console.log(stems)
+		
 		var stopwords = []
 		$.getJSON( 'stopwords.json', function(json){
 			for (var key in json) {
@@ -43,6 +45,8 @@ $(function(){
 				}
 			})
 		}
+		
+		console.log(dictionary)
 		
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
     var toProcess = (splited.slice(0).slice(0))
