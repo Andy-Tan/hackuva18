@@ -32,14 +32,13 @@ $(function(){
     var toProcess = (splited.slice(0).slice(0))
     var stemmedWords = ([])
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
-      var currWord = toProcess[index5512]
-      console.log(stems[currWord])  
+      var currWord = toProcess[index5512] 
       {
-          if (currWord in Object.keys(stems)) {
-            stemmedWords.push(stems[currWord])  
-          } else {
-            stemmedWords.push(currWord)
-          }
+        if (currWord in Object.keys(stems)) {
+          stemmedWords.push(stems[currWord])  
+        } else {
+          stemmedWords.push(currWord)
+        }
       }
     }
 	
