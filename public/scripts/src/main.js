@@ -9,9 +9,7 @@ $(function(){
 		
 		var stems = ({})
 		$.getJSON( 'stems.json', function(json){
-			for (var key in json) {
-				(stems[key] = json[key]);
-			}
+			stems = json;
 		})
 		
 		console.log(stems)
