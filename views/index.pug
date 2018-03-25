@@ -23,6 +23,10 @@ html
     .container
       .row
         .col.s12
+          form
+            input(type='text', name='text', value='')
+            input(type='submit', value='This is a button!')
+            | ;
           p.flow-text
             | This demo and the underlying app can be used to simplify, understand and debug the authorization flow used by #{company_name} API.
             | You can bootstrap your projects with this app to quickly set them up for consuming the #{company_name} API.
