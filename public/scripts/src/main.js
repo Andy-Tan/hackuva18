@@ -18,7 +18,9 @@ $(function(){
 		
 		var stopwords = []
 		$.getJSON( 'stopwords.json', function(json){
-			stopwords = json
+			for(var index3232 = 0; index3232 < json.length; index3232++) {
+        stopwords[index3232] = json[index3232]
+      }
 		})
 		
 		console.log(stopwords)
