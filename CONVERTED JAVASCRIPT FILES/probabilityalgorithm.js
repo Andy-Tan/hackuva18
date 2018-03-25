@@ -1,4 +1,25 @@
 /* Generated from Java with JSweet 2.0.0 - http://www.jsweet.org */
+var stems =  (function (){
+    $.getJSON( "stems.json", function( data ) {
+        var dictionary = ({});
+        for(var key in data){
+            dictionary([key] = data[key]);
+        }
+});
+var stopwords =  (function (){
+    $.getJSON( "stopwords.json", function( data ) {
+        var dictionary = ({});
+        for(var key in data){
+            dictionary([key] = data[key]);
+        }
+});
+var probabilities =  (function (){
+    $.getJSON( "text.json", function( data ) {
+        var dictionary = data;
+        return dictionary;
+});
+
+
 var NaiveBayes = (function () {
     function NaiveBayes() {
     }
