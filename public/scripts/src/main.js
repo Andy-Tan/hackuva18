@@ -78,6 +78,7 @@ $(function(){
         var currWord = noDuplicates[index5514]
         {
             if (currWord in dictionary) {
+				console.log("currword is in dictionary")
                 totalProbability *= (function (m, k) { return m[k] ? m[k] : null; })(dictionary, currWord)
             }
         }
