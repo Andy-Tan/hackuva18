@@ -1,3 +1,4 @@
+{
 "Medical":
 	{
 		"accident":500,
@@ -95,3 +96,4 @@
 		"wound":450,
 		"wounded":500	
 	}
+}
