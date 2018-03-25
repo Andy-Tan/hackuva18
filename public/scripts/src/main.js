@@ -38,7 +38,7 @@ $(function(){
     var stemmedWords = ([])
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
       var currWord = toProcess[index5512] 
-      if (currWord in stem) {
+      if (currWord in stems) {
         console.log("push stem")
         stemmedWords.push(stems[currWord])  
       } else {
