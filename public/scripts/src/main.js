@@ -27,14 +27,18 @@ $(function(){
     })
     console.log(dictionary)
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
-	
+    console.log("splitted")
 	  console.log(splited)
 	
     var toProcess = (splited.slice(0).slice(0))
+
+    console.log("toprocess")
+    console.log(toProcess)
+
     var stemmedWords = ([])
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
       var currWord = toProcess[index5512] 
-      if (stems[currWord] != null) {
+      if (currWord in stem) {
         console.log("push stem")
         stemmedWords.push(stems[currWord])  
       } else {
