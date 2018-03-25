@@ -7,7 +7,7 @@ $(function(){
   var isInDanger = (function (message, filename) {
 		var threshold = 50
 		
-		var stems = ({})
+		var stems = {}
 		$.getJSON( 'stems.json', function(json){
 			for (var key in json) {
 				(stems[key] = json[key])
@@ -19,7 +19,7 @@ $(function(){
         stopwords[key] = json[key]
       }
 		})
-		var dictionary = ({})
+		var dictionary = {}
 		$.getJSON( filename, function(json){
 			for (var key in json) {
 				(dictionary[key] = json[key])
@@ -31,7 +31,7 @@ $(function(){
     console.log("toprocess")
     console.log(toProcess)
 
-    var stemmedWords = ([])
+    var stemmedWords = []
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
       var currWord = toProcess[index5512] 
       console.log(currWord)
