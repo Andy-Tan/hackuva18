@@ -34,12 +34,12 @@ $(function(){
     var stemmedWords = ([])
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
       var currWord = toProcess[index5512] 
-      if (stems[currWord]) {
+      if (stems[currWord] != null) {
         console.log("push stem")
         stemmedWords.push(stems[currWord])  
       } else {
         console.log("push currWord")
-        stemmedWords.push(currWord)
+        //stemmedWords.push(currWord)
       }
     }
 	
@@ -52,6 +52,7 @@ $(function(){
             /* add */ (stopwordsNoPunctuation.push(/* replaceAll */ currWord.replace(new RegExp("[^a-zA-Z ]", 'g'), "")) > 0);
         }
     }
+    console.log(stopwordsNoPunctuation)
       
     /* removeAll */ (function (a, r) { var b = false; for (var i = 0; i < r.length; i++) {
         var ndx = a.indexOf(r[i])
@@ -288,8 +289,8 @@ $(function(){
     console.log("The button was clicked.")
     //console.log(textField)
     var police = isInDanger( textField, 'police.json')
-	var fire = isInDanger( textField, 'fire.json')
-	var medical = isInDanger( textField, 'medical.json')
+	//var fire = isInDanger( textField, 'fire.json')
+	//var medical = isInDanger( textField, 'medical.json')
 	console.log(police)
 	//console.log(fire)
 	//console.log(medical)
