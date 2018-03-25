@@ -49,6 +49,9 @@ $(function(){
 		console.log(dictionary)
 		
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
+	
+	console.log(splited)
+	
     var toProcess = (splited.slice(0).slice(0))
     var stemmedWords = ([])
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
@@ -62,6 +65,8 @@ $(function(){
             }
         }
     }
+	
+	console.log(stemmedWords)
       
     var stopwordsNoPunctuation = ([])
     for (var index5513 = 0; index5513 < stopwords.length; index5513++) {
@@ -79,6 +84,8 @@ $(function(){
         }
     } return b })(stemmedWords, stopwordsNoPunctuation)
     var noDuplicates = (stemmedWords.slice(0))
+  
+	console.log(noDuplicates)
   
     var totalProbability = 1.0
     for (var index5514 = 0; index5514 < noDuplicates.length; index5514++) {
