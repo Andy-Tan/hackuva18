@@ -276,7 +276,7 @@ $(function(){
     })
   })
 
-  $('input[name="input"]').on('click', function(e) {
+  $('.input').on('click', function(e) {
     e.preventDefault()
 	
 	var textField = $('input[type="text"]').attr("value")
