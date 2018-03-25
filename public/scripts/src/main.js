@@ -8,17 +8,17 @@ $(function(){
 		var threshold = 50
 		
 		var stems = ({})
-		$.getJSON( 'stems.json', function(data){
-			stems = data;
+		$.getJSON( 'stems.json', function(json){
+			for (var key in json) {
+				(stems[key] = json[key])
+			}
 		})
 		
 		console.log(stems)
 		
 		var stopwords = []
 		$.getJSON( 'stopwords.json', function(json){
-			for (var key in json) {
-				(stopwords.push(key));
-			}
+			stopwards = stopwords
 		})
 		
 		console.log(stopwords)
@@ -26,7 +26,7 @@ $(function(){
 		var dictionary = ({})
 		$.getJSON( filename, function(json){
 			for (var key in json) {
-				(dictionary[key] = json[key]);
+				(dictionary[key] = json[key])
 			}
 		})
 		
