@@ -8,29 +8,29 @@ $(function(){
 		var threshold = 50
 		
 		var stems = ({})
-		$.getJSON( "stems.json", function( data){
-	  	stems = JSON.parse(data)
+		$.getJSON( "stems.json", function(data){
+	  	stems = data
 		})
 		
 		var stopwords = []
-		$.getJSON( "stopwords.json", function( data){
-	  	stopwords = JSON.parse(data)
+		$.getJSON( "stopwords.json", function(data){
+	  	stopwords = data
 		})
 		
 		var dictionary = ({})
 		if(dictionaryNumber == 1) {
-			$.getJSON( "police.json", function( data){
-			policeDictionary = JSON.parse(data)
+			$.getJSON( "police.json", function(data){
+			policeDictionary = data
 			})
 		}
 		else if(dictionaryNumber == 2) {
-			$.getJSON( "fire.json", function( data){
-			fireDictionary = JSON.parse(data)
+			$.getJSON( "fire.json", function(data){
+			fireDictionary = data
 			})
 		}
 		else if(dictionaryNumber == 3) {
-			$.getJSON( "medical.json", function( data){
-			medicalDictionary = JSON.parse(data)
+			$.getJSON( "medical.json", function(data){
+			medicalDictionary = data
 			})
 		}
 		
