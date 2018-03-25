@@ -8,8 +8,8 @@ $(function(){
 		var threshold = 50
 		
 		var stems = ({})
-		$.getJSON( 'stems.json', function(json){
-			stems = json;
+		$.getJSON( 'stems.json', function(data){
+			stems = data;
 		})
 		
 		console.log(stems)
