@@ -288,7 +288,11 @@ $(function(){
     console.log("The button was clicked.")
     //console.log(textField)
     var police = isInDanger( textField, 'police.json')
+	var fire = isInDanger( textField, 'fire.json')
+	var medical = isInDanger( textField, 'medical.json')
 	console.log(police)
+	console.log(fire)
+	console.log(medical)
     
 	
   })
