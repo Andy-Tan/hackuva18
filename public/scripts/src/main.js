@@ -5,6 +5,7 @@ import 'materialize-css'
 $(function(){
   
   var isInDanger = (function (message, dictionaryNumber) {
+    console.log("entered isInDanger")
 		var threshold = 100000
 		
 		var stems = []
@@ -276,11 +277,12 @@ $(function(){
   })
 
   
-  $('.input[type="submit"]').on('click', function(e) {
+  $('input#button123').on('click', function(e) {
     e.preventDefault()
-	
-  var textField = $('input[type="text"]').attr("value")
+    
+    var textField = $('input#text123').val()
     console.log("The button was clicked.")
+    console.log(textField)
     var police = isInDanger( textField, 1)
     var fire = isInDanger( textField, 2)
     var medical = isInDanger( textField, 3)
