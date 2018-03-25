@@ -13,6 +13,7 @@ $(function(){
 				stems[key.trim()] = data[key].toString()
 			}
     })
+    stems = {"needed":"need"}
     console.log(stems)
 		var stopwords = []
 		$.getJSON( 'stopwords.json', function(data){
