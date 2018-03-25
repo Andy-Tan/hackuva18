@@ -24,19 +24,21 @@ $(function(){
 			for (var key in json) {
 				(dictionary[key] = json[key])
 			}
-		})		
+    })
+    console.log()
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
 	
-	console.log(splited)
+	  console.log(splited)
 	
     var toProcess = (splited.slice(0).slice(0))
     var stemmedWords = ([])
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
       var currWord = toProcess[index5512] 
       {
-        if (currWord in Object.keys(stems)) {
+        if (stems[currWord]) {
           stemmedWords.push(stems[currWord])  
         } else {
+          console.log("push currWord")
           stemmedWords.push(currWord)
         }
       }
