@@ -158,6 +158,11 @@ $(function(){
       }
     }
   })
+  
+    $('a.calculate-probability').on('click', function(e) {
+    e.preventDefault()
+    
+  })
 
   $('.use-addr').on('click', function(e) {
     e.preventDefault()
