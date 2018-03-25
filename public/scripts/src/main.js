@@ -12,7 +12,8 @@ $(function(){
 			for (var key in json) {
 				(stems[key.toString()] = json[key].toString())
 			}
-		})
+    })
+    console.log(stems)
 		var stopwords = []
 		$.getJSON( 'stopwords.json', function(json){
 			for(var key in json) {
