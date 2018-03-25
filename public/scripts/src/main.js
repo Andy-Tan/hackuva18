@@ -25,7 +25,7 @@ $(function(){
 				(dictionary[key] = json[key])
 			}
     })
-    console.log()
+    console.log(dictionary)
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
 	
 	  console.log(splited)
@@ -34,13 +34,12 @@ $(function(){
     var stemmedWords = ([])
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
       var currWord = toProcess[index5512] 
-      {
-        if (stems[currWord]) {
-          stemmedWords.push(stems[currWord])  
-        } else {
-          console.log("push currWord")
-          stemmedWords.push(currWord)
-        }
+      if (stems[currWord]) {
+        console.log("push stem")
+        stemmedWords.push(stems[currWord])  
+      } else {
+        console.log("push currWord")
+        stemmedWords.push(currWord)
       }
     }
 	
@@ -292,8 +291,8 @@ $(function(){
 	var fire = isInDanger( textField, 'fire.json')
 	var medical = isInDanger( textField, 'medical.json')
 	console.log(police)
-	console.log(fire)
-	console.log(medical)
+	//console.log(fire)
+	//console.log(medical)
     
 	
   })
