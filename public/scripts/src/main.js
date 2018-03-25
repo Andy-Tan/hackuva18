@@ -7,31 +7,31 @@ $(function(){
   var isInDanger = (function (message, dictionaryNumber) {
 		var threshold = 50
 		
-		var stems = ({})
+		var stems = null
 		$.getJSON( "stems.json", function(data){
-			stems = JSON.parse(data)
+			stems = data
 		})
 		
-		var stopwords = []
+		var stopwords = null
 		$.getJSON( "stopwords.json", function(data){
 			console.log(data)
-			stopwords = JSON.parse(data)
+			stopwords = data
 		})
 		
-		var dictionary = ({})
+		var dictionary = null
 		if(dictionaryNumber == 1) {
 			$.getJSON( "police.json", function(data){
-			policeDictionary = JSON.parse(data)
+			policeDictionary = data
 			})
 		}
 		else if(dictionaryNumber == 2) {
 			$.getJSON( "fire.json", function(data){
-			fireDictionary = JSON.parse(data)
+			fireDictionary = data
 			})
 		}
 		else if(dictionaryNumber == 3) {
 			$.getJSON( "medical.json", function(data){
-			medicalDictionary = JSON.parse(data)
+			medicalDictionary = data
 			})
 		}
 		
@@ -48,9 +48,7 @@ $(function(){
                 /* add */ (stemmedWords.push(currWord) > 0)
             }
         }
-    }    
-	
-	console.log(stemmedWords)
+    }
       
     var stopwordsNoPunctuation = ([])
     for (var index5513 = 0; index5513 < stopwords.length; index5513++) {
