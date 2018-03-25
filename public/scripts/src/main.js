@@ -82,6 +82,9 @@ $(function(){
             }
         }
     }
+	
+	console.log(totalProbability)
+	
     if (totalProbability > threshold) {
         return true
     }
