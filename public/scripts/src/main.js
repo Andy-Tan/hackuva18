@@ -13,27 +13,18 @@ $(function(){
 				(stems[key] = json[key])
 			}
 		})
-		
-		console.log(stems)
-		
 		var stopwords = []
 		$.getJSON( 'stopwords.json', function(json){
 			for(var key in json) {
         stopwords[key] = json[key]
       }
 		})
-		
-		console.log(stopwords)
-		
 		var dictionary = ({})
 		$.getJSON( filename, function(json){
 			for (var key in json) {
 				(dictionary[key] = json[key])
 			}
-		})
-		
-		console.log(dictionary)
-		
+		})		
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
 	
 	console.log(splited)
@@ -41,14 +32,15 @@ $(function(){
     var toProcess = (splited.slice(0).slice(0))
     var stemmedWords = ([])
     for (var index5512 = 0; index5512 < toProcess.length; index5512++) {
-        var currWord = toProcess[index5512]
-        {
-            if (currWord in Object.keys(stems)) {
-              stemmedWords.push(stems[currWord])  
-            } else {
-              stemmedWords.push(currWord)
-            }
-        }
+      console.log(stems[currWord])  
+      var currWord = toProcess[index5512]
+      {
+          if (currWord in Object.keys(stems)) {
+            stemmedWords.push(stems[currWord])  
+          } else {gi
+            stemmedWords.push(currWord)
+          }
+      }
     }
 	
 	console.log(stemmedWords)
