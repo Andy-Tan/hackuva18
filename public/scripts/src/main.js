@@ -23,6 +23,8 @@ $(function(){
 			}
 		})
 		
+		console.log(stopwords)
+		
 		var dictionary = ({})
 		$.getJSON( filename, function(json){
 			for (var key in json) {
