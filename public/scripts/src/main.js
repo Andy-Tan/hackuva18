@@ -276,7 +276,7 @@ $(function(){
     })
   })
 
-  
+  /*
   $('input#button123').on('click', function(e) {
     e.preventDefault()
     
@@ -287,6 +287,6 @@ $(function(){
     var fire = isInDanger( textField, 2)
     var medical = isInDanger( textField, 3)
 	
-  })
+  })*/
   
 })
