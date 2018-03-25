@@ -8,21 +8,21 @@ $(function(){
 		var threshold = 50
 		
 		var stems = {}
-		$.getJSON( 'stems.json', function(json){
-			for (var key in json) {
-				stems[key.toString()] = json[key].toString()
+		$.getJSON( 'stems.json', function(data){
+			for (var key in data) {
+				stems[key.trim()] = json[key].toString()
 			}
     })
     console.log(stems)
 		var stopwords = []
-		$.getJSON( 'stopwords.json', function(json){
-			for(var key in json) {
-        stopwords[key.toString()] = json[key].toString()
+		$.getJSON( 'stopwords.json', function(data){
+			for(var key in data) {
+        stopwords.pop(json[key].toString())
       }
 		})
 		var dictionary = {}
-		$.getJSON( filename, function(json){
-			for (var key in json) {
+		$.getJSON( filename, function(data){
+			for (var key in data) {
 				dictionary[key.toString()] = json[key].toString()
 			}
     })
